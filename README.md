@@ -1,2 +1,2 @@
-# toss-me
+# toss.me
 Url shortener
