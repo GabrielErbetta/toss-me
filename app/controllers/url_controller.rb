@@ -3,7 +3,7 @@ class UrlController < ApplicationController
 	def create
 		@url = Url.new(url: params[:url], short_url: Url.shorten(params[:url]))
 		if @url.save
-			success = true
+			@success = true
 			render 'info'
 		else 
 			render 'home'
