@@ -1,7 +1,22 @@
-<h1 class="title">toss.me</h1>
-<p class="subtitle">Url shortener</p>
+<div class="home_page_logo">
+	<h1 class="title">toss.me</h1>
+	<p class="subtitle">Minimalist url shortener</p>
+</div>
 
-<%= form_tag("/shorten", method: 'post') do %>
-	<%= text_field_tag(:url) %>
-	<%= submit_tag("Dwarvify!") %>
+<% if @url %>
+
+	<%= form_tag("/shorten", method: 'post') do %>
+		<%= text_field_tag :url, @url.url, class: 'url', size: 80 %>
+		<%= submit_tag "Shorten", class: 'submit' %>
+	<% end %>
+
+	<p class="error">Invalid url</p>
+
+<% else %>
+
+	<%= form_tag("/shorten", method: 'post') do %>
+		<%= text_field_tag :url, "", class: 'url', size: 80 %>
+		<%= submit_tag "Shorten", class: 'submit' %>
+	<% end %>
+
 <% end %>

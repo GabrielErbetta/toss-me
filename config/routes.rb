@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
 
-  #resources :url, only: [:create]
-
   root 'url#home'
 
   post '/shorten', to: 'url#create', as: 'shorten'
-  get '/:url', to: 'url#show'
+  get '/:url', to: 'url#redirect'
+  get '/info/:url', to: 'url#info'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

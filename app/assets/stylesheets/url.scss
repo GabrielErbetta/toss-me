@@ -2,14 +2,75 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-h1.title {
+@import url(https://fonts.googleapis.com/css?family=Rock+Salt);
+
+html {
 	text-align: center;
+	font-family: sans-serif;
 }
 
-p.subtitle {
-	text-align: center;
+a, a:visited {
+	text-decoration: none;
+	color: #00e;
+	font-weight: 600;
+}
+
+div.home_page_logo {
+	margin-top: 10%;
+	margin-bottom: 100px;
+}
+
+div.logo {
+	margin-bottom: 100px;
+}
+
+	h1.title {
+		font-size: 80pt;
+		line-height: 80pt;
+		font-family: 'Rock Salt', cursive;
+		text-align: center;
+		margin: 0;
+	}
+
+.page_title {
+	font-size: 20pt;
+	margin-bottom: 50px;
+}
+
+a.url_title {
+	font-size: 20pt;
+	margin-bottom: 50px;
 }
 
 form {
 	text-align: center;
+}
+
+	.url {
+		font-size: 14pt;
+	}
+
+	.submit {
+		font-size: 14pt;
+	}
+
+p.warning {
+	line-height: 28pt;
+	margin: 50px auto;
+	border-radius: 5px;
+	font-weight: bold;
+}
+
+	p.error {
+		width: 200px;
+		background-color: #f55;
+	}
+
+	p.success {
+		width: 500px;
+		background-color: #5f5;
+	}
+
+p.info {
+	margin-bottom: 6px;
 }

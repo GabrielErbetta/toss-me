@@ -1,0 +1,18 @@
+<div class="logo">
+	<h1 class="title">toss.me</h1>
+</div>
+
+<% if :success == true %>
+	<p class="warning success">Your url was successfully shortened</p>
+<% end %>
+
+<div class="page_title">
+	<a class="url_title" href="http://localhost:3000/<%= @url.short_url %>"> localhost:3000/<%= @url.short_url %> </a>
+</div>
+
+<p class="info">This url has been visited <%= @url.accesses %> times and redirects to</p>
+<a href="<%= @url.url %>"> <%= @url.url %> </a>
+
+<br><br>
+
+<p>To see this meta page again, access <a href="http://localhost:3000/info/<%= @url.short_url %>">localhost:3000/info/<%= @url.short_url %></a> anytime.</p>

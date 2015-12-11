@@ -1,18 +1,32 @@
 class UrlController < ApplicationController
 
 	def create
-		url = params[:url]
 		@url = Url.new(url: params[:url], short_url: Url.shorten(params[:url]))
 		if @url.save
-			render 'show'
+			success = true
+			render 'info'
 		else 
 			render 'home'
 		end
 	end
 
-	def show
+	def redirect
 		@url = Url.find_by(short_url: params[:url])
-		redirect_to @url.url
+		if @url
+			@url.up_visits
+			redirect_to @url.url
+		else
+			render 'not_found'
+		end
+	end
+
+	def info
+		@url = Url.find_by(short_url: params[:url])
+		if @url
+			render 'info'
+		else
+			render 'not_found'
+		end
 	end
 
 	def url_params

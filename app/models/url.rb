@@ -1,13 +1,10 @@
 class Url < ActiveRecord::Base
+	validates :url, :format => URI::regexp(%w(http https))
 
-	#def create
-	#	@url = Url.new(url_params)
-	#end
-	
-	#def list
-	#    list 
-	#    render('list')
-	#end
+	def up_visits
+		self.accesses += 1
+		self.save
+	end
 
 	class << self
 
@@ -23,6 +20,5 @@ class Url < ActiveRecord::Base
 
 			return shorter_url
 		end
-	
 	end
 end
