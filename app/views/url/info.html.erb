@@ -7,7 +7,7 @@
 <% end %>
 
 <div class="page_title">
-	<a class="url_title" href="http://localhost:3000/<%= @url.short_url %>"> localhost:3000/<%= @url.short_url %> </a>
+	<a class="url_title" href="https://toss-me-url-shortener.herokuapp.com/<%= @url.short_url %>"> toss-me-url-shortener.herokuapp.com/<%= @url.short_url %> </a>
 </div>
 
 <p class="info">This url has been visited <%= @url.accesses %> times and redirects to</p>
@@ -15,4 +15,6 @@
 
 <br><br>
 
-<p>To see this meta page again, access <a href="http://localhost:3000/info/<%= @url.short_url %>">localhost:3000/info/<%= @url.short_url %></a> anytime.</p>
+<p>To see this meta page again, access <a href="https://toss-me-url-shortener.herokuapp.com/info/<%= @url.short_url %>">toss-me-url-shortener.herokuapp.com/info/<%= @url.short_url %></a> anytime.</p>
+
+https://toss-me-url-shortener.herokuapp.com/shorten
